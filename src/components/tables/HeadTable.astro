@@ -1,0 +1,17 @@
+---
+interface Props {
+  numberColumns: number;
+}
+
+const { numberColumns = 1 } = Astro.props;
+---
+
+<div class="grid justify-center grid-content-head">
+  <slot />
+</div>
+
+<style define:vars={{ numberColumns }}>
+  .grid-content-head {
+    grid-template-columns: repeat(var(--numberColumns), 1fr);
+  }
+</style>

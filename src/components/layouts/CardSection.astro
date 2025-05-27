@@ -1,0 +1,22 @@
+---
+import CardDesign from "@/components/ui/CardDesign.astro";
+import SectionHeader from "@/components/layouts/SectionHeader.astro";
+import SectionFooter from "@/components/layouts/SectionFooter.astro";
+
+interface Props {
+  titleCard: string;
+  hasFooter?: boolean;
+}
+
+const { hasFooter = false, titleCard }: Props = Astro.props;
+---
+
+<CardDesign>
+  <SectionHeader titleCard={titleCard}>
+    <slot name="button-header" slot="button-header" />
+  </SectionHeader>
+  <div class="cardMain">
+    <slot />
+  </div>
+  {hasFooter && <SectionFooter />}
+</CardDesign>

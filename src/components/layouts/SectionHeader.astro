@@ -1,0 +1,18 @@
+---
+interface Props {
+  titleCard: string;
+}
+const { titleCard }: Props = Astro.props;
+---
+
+<header
+  class="w-full font-semibold text-lg flex items-center justify-between bg-gradient-to-b from-secondary to-transparent p-2 rounded-t-xl"
+>
+  <h2 class="flex items-center gap-2 capitalize text-gray-300">
+    <span
+      class="size-2 bg-slate-500 rounded-full transition-all group-hover:bg-sky-600 group-hover:scale-125"
+    ></span>
+    <span>{titleCard}</span>
+  </h2>
+  <slot name="button-header" />
+</header>

@@ -1,0 +1,17 @@
+---
+import ExpensesSection from "@/sections/ExpensesSection.astro";
+import IncomesSection from "@/sections/IncomesSection.astro";
+import FixedSection from "@/sections/FixedSection.astro";
+import VariablesSection from "@/sections/VariablesSection.astro";
+---
+
+<section class="grid grid-cols-[2fr_1fr] gap-4 p-4">
+  <article class="grid grid-rows-[auto_1fr] gap-4">
+    <ExpensesSection />
+  </article>
+  <article class="h-full grid grid-rows-[auto_auto_auto] gap-4">
+    <IncomesSection />
+    <FixedSection />
+    <VariablesSection />
+  </article>
+</section>

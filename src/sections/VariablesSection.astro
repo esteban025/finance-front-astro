@@ -1,0 +1,32 @@
+---
+import CardSection from "@/components/layouts/CardSection.astro";
+import HeadTable from "@/components/tables/HeadTable.astro";
+import BodyTable from "@/components/tables/BodyTable.astro";
+import { HeadSecondaries } from "@/types/enum";
+import { subcategoryVariable } from "@/data/subcategories";
+---
+
+<CardSection titleCard="gastos variables">
+  <div class="s">
+    <HeadTable numberColumns={Object.keys(HeadSecondaries).length}>
+      {
+        Object.values(HeadSecondaries).map((head) => (
+          <div class="colum-head">{head}</div>
+        ))
+      }
+    </HeadTable>
+
+    <div class="grid grid-cols-1 gap-2 p-2">
+      {
+        subcategoryVariable.map((ss) => (
+          <BodyTable numberColumns={Object.keys(HeadSecondaries).length}>
+            <span class="text-sm">{ss.name}</span>
+            <span class="text-sm">$ {ss.designatedAmount}</span>
+            <span class="text-sm">$ {0}</span>
+            <span class="text-sm">$ {0}</span>
+          </BodyTable>
+        ))
+      }
+    </div>
+  </div>
+</CardSection>

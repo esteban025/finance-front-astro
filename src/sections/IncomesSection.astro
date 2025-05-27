@@ -1,0 +1,17 @@
+---
+import CardSection from "@/components/layouts/CardSection.astro";
+import HeadTable from "@/components/tables/HeadTable.astro";
+import { HeadSecondaries } from "@/types/enum";
+---
+
+<CardSection titleCard="ingresos mensuales">
+  <div class="s">
+    <HeadTable numberColumns={Object.keys(HeadSecondaries).length}>
+      {
+        Object.values(HeadSecondaries).map((head) => (
+          <div class="colum-head">{head}</div>
+        ))
+      }
+    </HeadTable>
+  </div>
+</CardSection>

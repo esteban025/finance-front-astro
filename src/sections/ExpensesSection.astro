@@ -1,0 +1,20 @@
+---
+import CardSection from "@/components/layouts/CardSection.astro";
+import AddExpenses from "@/components/buttons/AddExpenses.astro";
+import HeadTable from "@/components/tables/HeadTable.astro";
+
+import { HeadExpenses } from "@/types/enum";
+---
+
+<CardSection titleCard="registro de gastos">
+  <AddExpenses slot="button-header" />
+  <div class="dentro p-2">
+    <HeadTable numberColumns={Object.keys(HeadExpenses).length}>
+      {
+        Object.values(HeadExpenses).map((head) => (
+          <div class="colum-head">{head}</div>
+        ))
+      }
+    </HeadTable>
+  </div>
+</CardSection>
