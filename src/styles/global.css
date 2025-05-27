@@ -3,5 +3,17 @@
 @theme {
   --color-primary: #0D1117;
   --color-secondary: #010409;
-  --color-border: #ffffff10;
+  --color-border: #ffffff30;
+}
+
+.colum-head {
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-gray-500);
+  text-transform: capitalize;
+
+}
+
+.colum-head+.colum-head {
+  border-left: 1px solid var(--color-border);
 }
